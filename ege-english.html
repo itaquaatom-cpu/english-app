@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ЕГЭ English</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef2f7;--card:#fff;--ink:#0f1b2d;--soft:#5d6b82;--acc:#2f5bea;--accink:#fff;--ok:#0f9d6e;--bad:#d63c44;--line:#d5dce8;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1524;--card:#17223a;--ink:#eaf0fb;--soft:#9fb0cb;--acc:#6e93ff;--accink:#0e1524;--ok:#3ddba5;--bad:#ff7b82;--line:#2a3a5c}}
+:root[data-theme="dark"]{--bg:#0e1524;--card:#17223a;--ink:#eaf0fb;--soft:#9fb0cb;--acc:#6e93ff;--accink:#0e1524;--ok:#3ddba5;--bad:#ff7b82;--line:#2a3a5c}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,sans-serif;line-height:1.5}
+main{max-width:640px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:30px;margin:0;font-weight:800;letter-spacing:-.02em}
+h2{font-size:20px;margin:0 0 8px;font-weight:800}
+.sub{color:var(--soft);margin:4px 0 20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:12px}
+.meta{color:var(--soft);font-size:14px}
+.bar{height:8px;background:var(--line);border-radius:8px;margin:10px 0;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--acc)}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.btn{background:var(--acc);color:var(--accink);border:0;border-radius:10px;padding:10px 18px;font-weight:800}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn:disabled{opacity:.5}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.q{font-size:21px;font-weight:600;margin:8px 0 14px}
+.gap{border-bottom:3px solid var(--acc);padding:0 18px}
+.hint{display:inline-block;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:2px 10px;font-weight:800;margin-left:6px}
+input[type=text],textarea{width:100%;font:inherit;font-size:18px;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+textarea{min-height:220px;resize:vertical;font-size:16px}
+.opt{display:block;width:100%;text-align:left;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-bottom:8px;font-size:18px}
+.opt.ok{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 20%,var(--card))}
+.opt.no{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 20%,var(--card))}
+.fb{margin-top:12px;padding:12px;border-radius:10px;border-left:5px solid var(--ok);background:var(--bg)}
+.fb.bad{border-color:var(--bad)}
+.tabs{display:flex;gap:8px;margin-bottom:12px}
+.tab{flex:1;border:1px solid var(--line);background:var(--card);border-radius:10px;padding:8px;font-weight:600}
+.tab[aria-pressed="true"]{background:var(--acc);color:var(--accink);border-color:var(--acc)}
+.cnt{font-weight:800}.cnt.ok{color:var(--ok)}.cnt.no{color:var(--bad)}
+table{border-collapse:collapse;width:100%;margin:8px 0;font-size:15px}
+td,th{border:1px solid var(--line);padding:6px 8px;text-align:left}
+ul{margin:6px 0;padding-left:20px}
+label{display:block;margin:4px 0}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<script>
+var S={
+g:{name:"Формы глаголов",task:"Задания 19–25",kind:"t",items:[
+["By the time we arrived, the film ___ already.","BEGIN",["had begun"],"Past Perfect: действие раньше другого действия в прошлом."],
+["If I ___ you, I would apologise.","BE",["were"],"Условное II: в if-части для всех лиц используем were."],
+["She ___ in London since 2019.","LIVE",["has lived","has been living"],"Present Perfect (Continuous) со словом since."],
+["The bridge ___ in 1890.","BUILD",["was built"],"Past Simple Passive: мост был построен."],
+["I wish I ___ more free time.","HAVE",["had"],"После wish о настоящем: Past Simple."],
+["While he ___ TV, the phone rang.","WATCH",["was watching"],"Past Continuous: длительное действие, прерванное другим."],
+["This time next week, we ___ on the beach.","LIE",["will be lying"],"Future Continuous: действие в конкретный момент в будущем."],
+["He said he ___ the report the day before.","FINISH",["had finished"],"Косвенная речь: сдвиг времён, Past Perfect."],
+["She suggested ___ to the museum.","GO",["going"],"После suggest используем -ing."],
+["My phone ___ at the moment, so I can’t call.","REPAIR",["is being repaired"],"Present Continuous Passive."],
+["If it ___ tomorrow, we will stay at home.","RAIN",["rains"],"Условное I: после if будущее заменяем на Present Simple."],
+["He is looking forward to ___ you.","SEE",["seeing"],"look forward to + -ing (to здесь предлог)."],
+["I ___ my homework by 8 o’clock yesterday.","FINISH",["had finished"],"Past Perfect: к моменту в прошлом."],
+["She is the only one who ___ the answer.","KNOW",["knows"],"Present Simple, 3-е лицо."],
+["The new school ___ next year.","OPEN",["will be opened"],"Future Simple Passive."],
+["I’m tired because I ___ all day.","WORK",["have been working"],"Present Perfect Continuous: длительное действие с результатом."],
+["He denied ___ the window.","BREAK",["breaking"],"deny + -ing."],
+["If she ___ harder, she would have passed.","STUDY",["had studied"],"Условное III: had + V3."]]},
+w:{name:"Словообразование",task:"Задания 26–31",kind:"t",items:[
+["Her ___ to help others is admirable.","WILL",["willingness"],"will → willing → willingness."],
+["It was an ___ experience.","FORGET",["unforgettable"],"un- + forget + -able, удвоение t."],
+["The ___ of the new library attracted many people.","OPEN",["opening"],"Существительное от open: opening."],
+["He spoke very ___ about the plan.","ENTHUSIASM",["enthusiastically"],"Наречие: enthusiastic + -ally."],
+["Air ___ is a big problem in cities.","POLLUTE",["pollution"],"pollute → pollution."],
+["This film is ___ for children under 12.","SUIT",["unsuitable"],"un- + suit + -able."],
+["Firefighters are known for their ___ actions.","COURAGE",["courageous"],"Прилагательное: courage → courageous (e сохраняется)."],
+["The ___ between the two cities is 200 km.","DISTANT",["distance"],"distant → distance."],
+["It was ___ to find a cheap hotel.","POSSIBLE",["impossible"],"possible → impossible (im- перед p)."],
+["There is a big ___ between them.","DIFFER",["difference"],"differ → difference."],
+["She gave a very ___ answer.","HELP",["helpful"],"help + -ful."],
+["Their ___ lasted for many years.","FRIEND",["friendship"],"friend + -ship."],
+["He was extremely ___ about the result.","DISAPPOINT",["disappointed"],"Прилагательное на -ed: чувство."],
+["Her ___ in maths surprised everyone.","IMPROVE",["improvement"],"improve → improvement."],
+["Reading helps to develop ___.","CREATE",["creativity"],"create → creative → creativity."],
+["The company needs more ___ workers.","EXPERIENCE",["experienced"],"experience → experienced."]]},
+m:{name:"Грамматика и лексика",task:"Задания 32–38",kind:"c",items:[
+["I look forward ___ you soon.",["to see","to seeing","seeing","see"],1,"look forward to + -ing."],
+["___ the rain, we went for a walk.",["Despite","Although","However","Because"],0,"Despite + существительное; although требует целого предложения."],
+["She gave ___ smoking last year.",["off","up","out","away"],1,"give up — бросить (привычку)."],
+["I’m not used ___ up early.",["to get","to getting","getting","get"],1,"be used to + -ing — привыкнуть."],
+["Hardly ___ the house when it started to rain.",["we had left","we left","had we left","did we leave"],2,"Hardly … when требует инверсии: had we left."],
+["Neither Tom ___ his friends were at the party.",["or","and","but","nor"],3,"neither … nor."],
+["This is the girl ___ father is a pilot.",["who","whose","which","whom"],1,"whose — притяжательное относительное слово."],
+["I’ll call you as soon as I ___ home.",["get","will get","am getting","got"],0,"После as soon as в будущем — Present Simple."],
+["The meeting was ___ because of the strike.",["called in","called up","called off","called on"],2,"call off — отменить."],
+["You ___ bring your passport; it’s required.",["must","needn’t","may","can"],0,"must — обязательно."],
+["He ___ the exam, so he was upset.",["lost","missed","failed","lacked"],2,"fail an exam — провалить экзамен."],
+["There is ___ information on this page.",["few","a few","many","little"],3,"information неисчисляемое: little."],
+["He asked me ___ I had finished.",["that","if","what","which"],1,"Косвенный вопрос без вопросительного слова: if/whether."],
+["I’d rather you ___ here.",["don’t smoke","didn’t smoke","won’t smoke","not smoke"],1,"would rather + подлежащее + Past Simple."],
+["She is good ___ playing the piano.",["in","on","at","for"],2,"be good at."],
+["___ I was tired, I went to the party.",["Although","Because","Despite","So"],0,"Although + предложение (уступка)."],
+["We ran out ___ milk.",["from","of","off","with"],1,"run out of — закончиться."],
+["It’s high time we ___ home.",["go","went","will go","have gone"],1,"It’s high time + Past Simple."]]}
+};
+var W=[
+{name:"Письмо · задание 39",min:100,max:140,
+prompt:"<i>…Last month I started at a new school. I’m still getting used to it. What subjects do you like best? How do you spend your free time? Have you ever travelled abroad? Write soon, Mark.</i><br>Write a letter to Mark. Answer his 3 questions and ask 3 questions about his new school. Write 100–140 words.",
+check:["Ответила на все 3 вопроса","Задала 3 вопроса про школу","Есть приветствие и обращение (Dear Mark,)","Есть благодарность или отсылка к письму","Есть завершение (Write soon, Anna)","Объём 100–140 слов"],
+phr:["Thanks for your letter.","It was great to hear from you.","As for me, …","I’m fond of …","By the way, …","Could you tell me …?","I’m looking forward to your reply.","Write back soon!"]},
+{name:"Эссе · задание 40",min:200,max:250,
+prompt:"<b>Free-time activities of teenagers (%)</b><table><tr><th></th><th>Russia</th><th>Germany</th></tr><tr><td>Watching videos</td><td>70</td><td>64</td></tr><tr><td>Playing sport</td><td>41</td><td>55</td></tr><tr><td>Reading</td><td>18</td><td>27</td></tr><tr><td>Meeting friends</td><td>52</td><td>48</td></tr></table>Comment on the data in the table and give your opinion on the problem: <i>Teenagers spend too much time online.</i> Write 200–250 words.",
+check:["Вступление: тема таблицы","2–3 факта из данных со сравнением","Своё мнение с причинами","Аргумент другой стороны и ответ на него","Заключение","Объём 200–250 слов"],
+phr:["The table shows …","The most popular activity is …","Compared with …","In contrast, …","It is worth noting that …","In my opinion, …","On the one hand … on the other hand …","To sum up, …"]}];
+var app=document.getElementById("app"),R=null,st={d:{},m:[]};
+try{var raw=localStorage.getItem("ege_st");if(raw)st=JSON.parse(raw)}catch(e){}
+function save(){try{localStorage.setItem("ege_st",JSON.stringify(st))}catch(e){}}
+var LV=[
+{n:"Уровень 1 · A1",t:"Старт: первые слова и фразы",lesson:"<p><b>Глагол to be</b> (быть): I <b>am</b>, you <b>are</b>, he/she/it <b>is</b>, we/they <b>are</b>. Пример: I am Anna. She is a student.</p><p><b>Артикли:</b> a перед согласным звуком (a book), an перед гласным (an apple).</p><p><b>Множественное число:</b> добавляем -s: cat → cats. Исключение: child → children.</p><p><b>Вопрос и отрицание:</b> Are you a student? He is not (isn’t) tall.</p>",
+words:[["hello","привет"],["goodbye","до свидания"],["thank you","спасибо"],["please","пожалуйста"],["mother","мама"],["father","папа"],["sister","сестра"],["brother","брат"],["friend","друг"],["school","школа"],["book","книга"],["teacher","учитель"],["water","вода"],["house","дом"],["cat","кошка"],["dog","собака"]],
+ex:[["I ___ a student.",["am","is","are","be"],0,"С I всегда am: I am."],["She ___ my sister.",["am","is","are","be"],1,"He/she/it → is."],["They ___ friends.",["is","am","are","be"],2,"We/you/they → are."],["This is ___ apple.",["a","an","the","two"],1,"Перед гласным звуком — an."],["I have two ___.",["book","books","bookes","a book"],1,"Множественное число: books."],["___ you a teacher?",["Is","Am","Are","Do"],2,"Вопрос с you: Are you…?"],["He ___ not tall.",["are","am","is","be"],2,"He is not (isn’t) tall."],["Выбери перевод: «Меня зовут Анна».",["My name is Anna.","I name Anna.","Me Anna is.","Anna my name."],0,"My name is … — «меня зовут»."],["This is ___ cat.",["an","a","two","are"],1,"Cat начинается на согласный: a cat."],["Два ребёнка — two ___.",["childs","childes","children","child"],2,"child — исключение: children."]],
+say:["Hello, my name is Anna.","I am a student.","This is my family.","I like my school."]},
+{n:"Уровень 2 · A2",t:"Основы: настоящее и прошедшее",lesson:"<p><b>Present Simple</b> (привычки): I/you/we/they work, he/she/it work<b>s</b>. Вопрос: Do you work? Does she work? Отрицание: don’t / doesn’t + глагол без -s.</p><p><b>There is / There are</b> — «есть, находится»: There is a book. There are two books.</p><p><b>Past Simple</b> (прошлое): правильные глаголы + -ed (play → played), неправильные надо учить (go → went). Be в прошлом: was/were.</p><p><b>can / could</b> — «могу / мог».</p>",
+words:[["always","всегда"],["often","часто"],["sometimes","иногда"],["never","никогда"],["breakfast","завтрак"],["lesson","урок"],["homework","домашнее задание"],["weekend","выходные"],["travel","путешествовать"],["buy","покупать"],["early","рано"],["late","поздно"],["weather","погода"],["visit","посещать"],["borrow","брать взаймы"],["beautiful","красивый"]],
+ex:[["She ___ English every day.",["study","studies","studying","studied"],1,"he/she/it + -s; study → studies."],["I ___ like coffee.",["doesn’t","don’t","isn’t","not"],1,"I + don’t + глагол."],["___ he play football?",["Do","Does","Is","Are"],1,"Вопрос с he: Does he play…?"],["There ___ two books on the table.",["is","are","am","be"],1,"Множественное число: There are."],["Yesterday I ___ to school.",["go","goes","went","going"],2,"go — неправильный глагол: went."],["We ___ football last Sunday.",["play","plays","played","playing"],2,"Правильный глагол + -ed."],["She ___ swim when she was five.",["can","could","cans","is can"],1,"Прошедшее от can — could."],["He doesn’t ___ TV in the morning.",["watches","watch","watching","watched"],1,"После doesn’t глагол без -s."],["I was ill, so I ___ at home.",["stay","stayed","stays","am staying"],1,"Прошедшее время: stayed."],["Выбери: «У меня есть сестра».",["I have a sister.","I has a sister.","I am a sister.","I have sister is."],0,"I have — «у меня есть»."]],
+say:["I usually get up at seven o’clock.","She does her homework in the evening.","We went to the park yesterday.","There are many books in my bag."]},
+{n:"Уровень 3 · B1",t:"Уверенно: опыт, сравнения, условия",lesson:"<p><b>Present Perfect</b> = have/has + третья форма глагола: I have visited London. Слова-подсказки: ever, never, already, yet, for, since.</p><p><b>Сравнение:</b> tall → taller → the tallest; beautiful → more beautiful → the most beautiful.</p><p><b>Условные предложения:</b> If it rains, we will stay at home. If I were you, I would study more.</p><p><b>Модальные:</b> must (обязательно), should (совет), have to (нужно).</p>",
+words:[["achieve","достигать"],["advice","совет"],["environment","окружающая среда"],["expensive","дорогой"],["improve","улучшать"],["opinion","мнение"],["successful","успешный"],["dangerous","опасный"],["decide","решать"],["experience","опыт"],["invite","приглашать"],["ability","способность"],["article","статья"],["solve","решать (проблему)"],["promise","обещать"],["polite","вежливый"]],
+ex:[["I have never ___ sushi.",["eat","ate","eaten","eating"],2,"Present Perfect: have + третья форма (eaten)."],["She has lived here ___ 2015.",["for","since","from","during"],1,"since + момент времени, for + период."],["This book is ___ than that one.",["interesting","more interesting","most interesting","interestinger"],1,"Длинное прилагательное: more + adj."],["He is the ___ student in our class.",["tall","taller","tallest","most tall"],2,"the + превосходная степень: the tallest."],["If it rains tomorrow, we ___ at home.",["stay","will stay","would stay","stayed"],1,"Условное I: if + Present, will + глагол."],["You ___ see a doctor. You look ill.",["should","can","may","would"],0,"should — совет."],["Have you finished your homework ___?",["yet","already","since","ever"],0,"В вопросах обычно yet: «уже ли»."],["If I ___ you, I would take the job.",["am","was","were","be"],2,"Условное II: If I were you."],["I’ve ___ been to Paris. It was great!",["ever","yet","already","never"],2,"already — уже."],["Выбери: «Она никогда не была в Лондоне».",["She has never been to London.","She never was to London.","She has never be in London.","She is never been London."],0,"has never been to — «никогда не бывала»."]],
+say:["I have never been to London.","If it rains, we will stay at home.","This is the most interesting book I have read.","You should talk to your teacher."]}];
+function mkv(w){return w.map(function(p){var o=sh(w.filter(function(x){return x!==p})).slice(0,3).map(function(x){return x[0]}),a=sh(o.concat([p[0]]));return["Как по-английски: «"+p[1]+"»?",a,a.indexOf(p[0]),p[1]+" — "+p[0]+"."]})}
+LV.forEach(function(L,i){S["a"+i]={name:L.n+" · грамматика",task:"",kind:"c",items:L.ex};S["v"+i]={name:L.n+" · слова",task:"",kind:"c",items:mkv(L.words)}});
+function lvOpen(i){var b=st.b||{};return i===0||(( b["a"+(i-1)]||0)>=70&&(b["v"+(i-1)]||0)>=70)}
+function say(t){try{speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);u.lang="en-US";u.rate=.8;speechSynthesis.speak(u)}catch(e){}}
+function level(i){
+var L=LV[i],b=st.b||{};
+app.innerHTML=hdr(L.n)+'<div class="card"><h2>'+L.t+'</h2>'+L.lesson+'</div><div class="card"><h2>Практика</h2><div class="row"><button class="btn" id="c1">Слова: карточки</button><button class="btn" id="c2">Слова: тест</button><button class="btn" id="c3">Грамматика: тест</button><button class="btn ghost" id="c4">Говорить</button></div><p class="meta">Лучший результат: слова '+(b["v"+i]||0)+'%, грамматика '+(b["a"+i]||0)+'%. Чтобы открыть следующий уровень, набери 70% в обоих тестах.</p></div>';
+document.getElementById("back").onclick=home;
+document.getElementById("c1").onclick=function(){flash(i,0)};
+document.getElementById("c2").onclick=function(){begin("v"+i)};
+document.getElementById("c3").onclick=function(){begin("a"+i)};
+document.getElementById("c4").onclick=function(){RA=L.say;aloud(0)}}
+function flash(i,j){
+var w=LV[i].words,p=w[j%w.length];
+app.innerHTML=hdr(LV[i].n+" · слова")+'<div class="card" style="text-align:center"><div class="q" style="font-size:34px">'+esc(p[0])+'</div><div id="ru" class="meta" style="font-size:22px;min-height:34px"></div><div class="row" style="justify-content:center;margin-top:12px"><button class="btn ghost" id="hr">🔊</button><button class="btn" id="tr">Перевод</button><button class="btn ghost" id="nx">Дальше</button></div><div class="meta" style="margin-top:8px">'+(j%w.length+1)+' из '+w.length+'</div></div>';
+document.getElementById("back").onclick=function(){level(i)};
+document.getElementById("hr").onclick=function(){say(p[0])};
+document.getElementById("tr").onclick=function(){document.getElementById("ru").textContent=p[1]};
+document.getElementById("nx").onclick=function(){flash(i,j+1)};say(p[0])}
+st.m=(st.m||[]).filter(function(x){return S[x[0]]&&S[x[0]].items[x[1]]});
+var SM=null;try{claude.use("sample").then(function(x){SM=x}).catch(function(){})}catch(e){}
+function ai(p){if(!SM)return Promise.reject({message:"Claude недоступен в этом окне"});return SM.json(p,{cache:false})}
+var TOP=["school","travel","sport","technology","health","environment","friends","music","cities","food","history","jobs"];
+function pick(){return TOP[Math.floor(Math.random()*TOP.length)]+", "+TOP[Math.floor(Math.random()*TOP.length)]}
+var FM={g:'10 NEW gap-fill sentences for EGE tasks 19-25 as a JSON array of [sentence containing ___, "BASE VERB IN CAPS", [accepted answers], "short explanation in Russian"]',
+w:'10 NEW word-formation sentences for EGE tasks 26-31 as a JSON array of [sentence containing ___, "ROOT WORD IN CAPS", [accepted answers], "short explanation in Russian"]',
+m:'10 NEW multiple-choice grammar and vocabulary sentences for EGE tasks 32-38 as a JSON array of [sentence containing ___, [4 options], index of the correct option 0-3, "short explanation in Russian"]'};
+function gen(k){
+var s0=S[k];app.innerHTML=hdr(s0.name)+'<div class="card">Claude придумывает новые задания…</div>';document.getElementById("back").onclick=home;
+var old=s0.items.slice(-25).map(function(x){return x[0]}).join(" | ");
+ai("Create "+FM[k]+". Level B1-B2 for Russian school students. Themes: "+pick()+". Do not repeat these: "+old+". Return only the JSON array.").then(function(a){
+a=a.filter(function(x){return Array.isArray(x)&&typeof x[0]==="string"&&x[0].indexOf("___")>-1&&(k==="m"?Array.isArray(x[1])&&x[1].length>1&&typeof x[2]==="number":Array.isArray(x[2]))});
+if(!a.length)throw{message:"неверный ответ"};var n=s0.items.length;a.forEach(function(x){s0.items.push(x)});
+R={q:a.map(function(_,i){return[k,n+i]}),i:0,r:0,mode:k};show()}).catch(function(e){app.innerHTML=hdr(s0.name)+'<div class="card">Не получилось: '+esc(e&&e.message||"ошибка")+'</div>';document.getElementById("back").onclick=home})}
+var TF=["True","False","Not stated"];
+var RD=[
+{t:"A1 · My Family",x:"My name is Anna. I am twelve. I have a mother, a father and a brother. My brother is Max. He is fifteen. We have a cat. Its name is Tom. I love my family.",q:[["Anna is twelve.",TF,0,"I am twelve — ей двенадцать."],["Max is Anna’s father.",TF,1,"Max — её брат (brother)."],["Anna has a sister.",TF,2,"О сестре в тексте ничего нет."],["What is the cat’s name?",["Max","Tom","Anna","Ben"],1,"Its name is Tom."]]},
+{t:"A2 · My Weekend",x:"On Saturday I usually get up late. After breakfast I help my mother in the kitchen. In the afternoon I meet my friends and we play volleyball in the park. Last weekend it rained, so we stayed at home and watched a film. On Sunday I do my homework and go to bed early.",q:[["The writer gets up early on Saturday.",TF,1,"usually get up late — поздно."],["Last weekend the friends watched a film.",TF,0,"stayed at home and watched a film."],["The writer goes to the park every Sunday.",TF,2,"Про воскресенье в парке не сказано."],["Why did they stay at home last weekend?",["It was cold","It rained","They were ill","They had homework"],1,"It rained — шёл дождь."]]},
+{t:"A Library Without Books",x:"The new library in our town has almost no paper books. Visitors borrow tablets and listen to audiobooks, and a small café on the ground floor stays open until midnight. The director says that young people now come twice as often as before. However, some older residents are unhappy. They miss the smell of paper and the quiet atmosphere. To please everyone, the library has opened a silent room on the top floor, where visitors can read printed magazines.",q:[["The library offers audiobooks.",TF,0,"Прямо сказано: visitors listen to audiobooks."],["Young people visit the library less often now.",TF,1,"Наоборот: приходят вдвое чаще."],["The director plans to close the café.",TF,2,"Об этом в тексте ничего нет."],["Why was the silent room opened?",["For students only","To please people who miss quiet and paper","For tourists","For the café staff"],1,"Чтобы угодить всем, включая недовольных пожилых."]]},
+{t:"A Young Inventor",x:"Fifteen-year-old Mia from Canada has designed a backpack that charges a phone while its owner walks to school. Small solar panels on the back collect energy even on cloudy days. Mia built the first version in her garage and tested it for three months. Now a local company wants to produce the bags, but Mia says she will finish school first. She hopes that her idea will help students who forget to charge their phones.",q:[["Mia’s backpack works only on sunny days.",TF,1,"Сказано: even on cloudy days."],["Mia tested her invention for three months.",TF,0,"Первую версию она тестировала три месяца."],["Mia’s parents helped her to build the first bag.",TF,2,"О родителях не упоминается."],["What will Mia do before working with the company?",["Move to another city","Finish school","Sell the idea","Build a garage"],1,"She will finish school first."]]},
+{t:"Why Sleep Matters",x:"Many teenagers go to bed after midnight, but scientists say they need about nine hours of sleep. Lack of sleep makes it harder to concentrate and remember new information. Researchers in one school moved the start of lessons from 8:00 to 9:00. After a year, the students’ marks improved and fewer of them felt ill. Experts add that screens before bedtime make falling asleep more difficult, so phones should be switched off an hour earlier.",q:[["Scientists say teenagers need about nine hours of sleep.",TF,0,"Прямо в тексте."],["After the schedule change, marks became worse.",TF,1,"Оценки улучшились."],["The experiment took place in a Russian school.",TF,2,"Страна не названа."],["What do experts recommend?",["Using phones in bed","Switching phones off an hour before sleep","Starting lessons at 7:00","Sleeping less at weekends"],1,"Phones should be switched off an hour earlier."]]}];
+function readList(){
+var h=hdr("Чтение")+RD.map(function(r,i){return '<div class="card"><h2>'+esc(r.t)+'</h2><div class="meta">'+r.q.length+' вопросов</div><div class="row" style="margin-top:8px"><button class="btn" data-i="'+i+'">Открыть</button></div></div>'}).join("")+'<button id="nt" hidden></button><div id="er" class="meta"></div>';
+app.innerHTML=h;document.getElementById("back").onclick=home;
+Array.prototype.forEach.call(app.querySelectorAll("[data-i]"),function(b){b.onclick=function(){reading(+b.dataset.i)}});
+document.getElementById("nt").onclick=newText}
+function newText(){
+var e=document.getElementById("er");e.textContent="Claude пишет текст…";
+ai('Write an original English text of about 170 words (B2 level, topics: '+pick()+') for an EGE reading task. Return JSON: {"t":"title","x":"text","q":[three statements as [statement,["True","False","Not stated"],correctIndex,"explanation in Russian"], then three multiple-choice questions as [question,[4 options],correctIndex,"explanation in Russian"]]}. Do not reuse these titles: '+RD.map(function(r){return r.t}).join("; ")).then(function(r){
+if(!r||!r.x||!Array.isArray(r.q)||!r.q.length)throw{message:"неверный ответ"};RD.push(r);reading(RD.length-1)}).catch(function(x){e.textContent="Не получилось: "+(x&&x.message||"ошибка")})}
+function reading(i){
+var r=RD[i],got=0,n=0,h=hdr("Чтение")+'<div class="card"><h2>'+esc(r.t)+'</h2><p>'+esc(r.x)+'</p></div>';
+r.q.forEach(function(q,j){h+='<div class="card"><div class="q" style="font-size:18px">'+(j+1)+'. '+esc(q[0])+'</div>'+q[1].map(function(o,m){return '<button class="opt" data-j="'+j+'" data-m="'+m+'">'+esc(o)+'</button>'}).join("")+'<div id="e'+j+'"></div></div>'});
+h+='<div class="meta" id="rs"></div><div class="row" style="margin-top:8px"><button id="nt" hidden></button><button class="btn ghost" id="ls">К текстам</button></div><div id="er" class="meta"></div>';
+app.innerHTML=h;document.getElementById("back").onclick=home;document.getElementById("ls").onclick=readList;document.getElementById("nt").onclick=newText;
+Array.prototype.forEach.call(app.querySelectorAll(".opt"),function(b){b.onclick=function(){
+var j=+b.dataset.j,m=+b.dataset.m,q=r.q[j],ok=m===q[2];
+Array.prototype.forEach.call(app.querySelectorAll('[data-j="'+j+'"]'),function(x){x.disabled=true;if(+x.dataset.m===q[2])x.classList.add("ok")});
+if(!ok)b.classList.add("no");
+document.getElementById("e"+j).innerHTML='<div class="fb'+(ok?'':' bad')+'">'+esc(q[3])+'</div>';
+var d=st.d.r||(st.d.r={n:0,r:0});d.n++;if(ok){d.r++;got++}n++;save();
+if(n===r.q.length)document.getElementById("rs").innerHTML='<b>Итог: '+got+' из '+n+'</b>'};});}
+var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+var RA=["The weather was rather cold, so I decided to wear a warm jacket.","Thirty-three thoughtful students walked through the Thursday rain.","She asked whether I would visit the museum with her on Wednesday.","We usually travel by train because it is cheaper and more comfortable.","The village where my grandparents live is famous for its beautiful lake."];
+var MT=["Talk about your favourite school subject. Say why you like it, what you do in the lessons, and whether you will need it in the future.","Describe a holiday you remember well. Say where you went, who was with you, and what you enjoyed most.","Do you think teenagers should have part-time jobs? Give your opinion with reasons.","Talk about a person you admire. Say who it is, what they do, and why you admire them."];
+function words(s){return s.toLowerCase().replace(/[’‘]/g,"'").replace(/[^a-z' ]+/g," ").split(/\s+/).filter(Boolean)}
+function mic(cont,onText,onErr){
+if(!SR){onErr("Распознавание речи не поддерживается. Открой страницу в Chrome или Safari.");return null}
+var rc=new SR();rc.lang="en-US";rc.continuous=cont;rc.interimResults=false;
+rc.onresult=function(e){var t="";for(var i=0;i<e.results.length;i++)t+=e.results[i][0].transcript+" ";onText(t.trim())};
+rc.onerror=function(e){onErr(e.error==="not-allowed"||e.error==="service-not-allowed"?"Нет доступа к микрофону. Разреши его в браузере или открой страницу в отдельной вкладке.":"Ошибка распознавания: "+e.error)};
+try{rc.start()}catch(x){onErr("Не удалось включить микрофон");return null}return rc}
+function fb(task,text,out){
+if(!SM){out.textContent="Claude недоступен в этом окне.";return}
+if(!text.trim()){out.textContent="Сначала напиши или произнеси текст.";return}
+out.textContent="Claude проверяет…";
+SM("You are a strict but kind EGE English examiner. Task: "+task+"\nStudent answer (may come from speech recognition, ignore punctuation and capitalisation):\n"+text+"\nReply in Russian. Give: 1) did the answer cover all points of the task; 2) grammar and vocabulary mistakes with corrections; 3) three concrete tips; 4) a rough mark out of 3 for content, language and organisation. Be concise.",{onText:function(r){out.textContent=r.text},cache:false}).catch(function(e){out.textContent="Не получилось: "+(e&&e.message||"ошибка")})}
+function speak(){
+app.innerHTML=hdr("Устная часть")+'<div class="card"><h2>Читать вслух</h2><div class="meta">Произнеси фразу, приложение отметит слова, которые не удалось распознать</div><div class="row" style="margin-top:10px"><button class="btn" id="a1">Начать</button></div></div><div class="card"><h2>Монолог и ответы на вопросы</h2><div class="meta">Говори по теме, потом Claude разберёт ответ</div><div class="row" style="margin-top:10px"><button class="btn" id="a2">Начать</button></div></div><div class="meta">Нужен Chrome или Safari и доступ к микрофону. Проверка сравнивает слова, а не звуки, поэтому это ориентир, а не оценка эксперта.</div>';
+document.getElementById("back").onclick=home;document.getElementById("a1").onclick=function(){aloud(0)};document.getElementById("a2").onclick=function(){mono(Math.floor(Math.random()*MT.length))}}
+function aloud(i){
+var s=RA[i%RA.length],rc=null,on=false;
+app.innerHTML=hdr("Читать вслух")+'<div class="card"><div class="q">'+esc(s)+'</div><div class="row"><button class="btn ghost" id="hr">🔊 Образец</button><button class="btn" id="mk">🎤 Говорить</button><button class="btn ghost" id="nx">Следующая</button></div><div id="rs" style="margin-top:12px"></div></div><button id="nw" hidden></button><div id="er" class="meta"></div>';
+var rs=document.getElementById("rs"),mk=document.getElementById("mk");
+document.getElementById("back").onclick=function(){try{rc&&rc.abort()}catch(x){}home()};
+document.getElementById("hr").onclick=function(){try{speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(s);u.lang="en-US";u.rate=.85;speechSynthesis.speak(u)}catch(x){}};
+document.getElementById("nx").onclick=function(){aloud(i+1)};
+document.getElementById("nw").onclick=function(){var e=document.getElementById("er");e.textContent="Claude придумывает фразы…";ai("Write 6 English sentences of 10-18 words, full of sounds that are hard for Russian speakers (th, w/v, -ed endings, long vowels). Theme: "+pick()+". Return only a JSON array of strings.").then(function(a){a=a.filter(function(x){return typeof x==="string"});if(!a.length)throw{message:"неверный ответ"};RA=a;aloud(0)}).catch(function(x){e.textContent="Не получилось: "+(x&&x.message||"ошибка")})};
+function score(t){var bag=words(t),ok=0,tk=s.split(" "),h="";
+tk.forEach(function(w){var p=bag.indexOf(words(w)[0]),g=p>-1;if(g){bag.splice(p,1);ok++}h+='<span class="cnt '+(g?"ok":"no")+'">'+esc(w)+'</span> '});
+var pc=Math.round(ok/tk.length*100);
+rs.innerHTML=h+'<p><b>'+pc+'%</b> слов распознано. Услышано: <i>'+esc(t)+'</i></p><p class="meta">'+(pc>=85?"Очень чётко!":"Красные слова не распознаны: послушай образец и повтори их медленнее.")+'</p>'}
+mk.onclick=function(){
+if(on){rc&&rc.stop();return}
+rs.textContent="Слушаю… говори, в конце сделай паузу";mk.textContent="⏹ Стоп";on=true;
+rc=mic(false,score,function(m){rs.textContent=m});
+if(rc)rc.onend=function(){on=false;mk.textContent="🎤 Говорить"};else{on=false;mk.textContent="🎤 Говорить"}}}
+function mono(i){
+var rc=null,on=false,tk=MT[i%MT.length];
+app.innerHTML=hdr("Монолог")+'<div class="card"><div class="q" style="font-size:18px">'+esc(tk)+'</div><div class="meta">Говори 1,5–2 минуты. Распознанный текст можно поправить руками перед проверкой.</div><div class="row" style="margin:10px 0"><button class="btn" id="mk">🎤 Начать</button><button class="btn ghost" id="nt">Другая тема</button></div><textarea id="tx" style="min-height:140px" placeholder="Здесь появится распознанная речь…"></textarea><div class="row" style="margin-top:10px"><button class="btn" id="ck">Проверить с Claude</button></div><div id="co" style="white-space:pre-wrap;margin-top:10px"></div></div>';
+var mk=document.getElementById("mk"),tx=document.getElementById("tx"),co=document.getElementById("co");
+document.getElementById("back").onclick=function(){try{rc&&rc.abort()}catch(x){}home()};
+document.getElementById("nt").onclick=function(){try{rc&&rc.abort()}catch(x){}mono(i+1)};
+document.getElementById("ck").onclick=function(){fb(tk,tx.value,co)};
+mk.onclick=function(){
+if(on){rc.stop();return}
+var base=tx.value?tx.value+" ":"";on=true;mk.textContent="⏹ Стоп";
+rc=mic(true,function(t){tx.value=base+t},function(m){co.textContent=m});
+if(rc)rc.onend=function(){on=false;mk.textContent="🎤 Начать"};else{on=false;mk.textContent="🎤 Начать"}}}
+function sh(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}return a}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function norm(s){return s.toLowerCase().replace(/[’‘]/g,"'").replace(/\s+/g," ").trim()}
+function home(){
+R=null;var h='<h1>English: от нуля до ЕГЭ</h1><p class="sub">Идём по уровням: сначала слова и простая грамматика, потом всё сложнее. Финальный уровень — подготовка к ЕГЭ.</p>';
+LV.forEach(function(L,i){var o=lvOpen(i);h+='<div class="card"><h2>'+L.n+'</h2><div class="meta">'+L.t+'</div><div class="row" style="margin-top:10px"><button class="btn" data-l="'+i+'"'+(o?'':' disabled')+'>'+(o?'Открыть':'Сначала пройди предыдущий уровень')+'</button></div></div>'});
+h+='<h2 style="margin-top:20px">Уровень 4 · Подготовка к ЕГЭ</h2>';
+["g","w","m"].forEach(function(k){var s=S[k],d=st.d[k]||{n:0,r:0},p=d.n?Math.round(d.r/d.n*100):0;
+h+='<div class="card"><h2>'+s.name+'</h2><div class="meta">'+s.task+' · '+s.items.length+' заданий в банке</div><div class="bar"><i style="width:'+p+'%"></i></div><div class="row"><span class="meta">'+(d.n?'Верно '+d.r+' из '+d.n+' ('+p+'%)':'Ещё не начато')+'</span><span style="flex:1"></span><button class="btn" data-s="'+k+'">Тренировать 10</button></div></div>'});
+h+='<div class="card"><h2>Чтение</h2><div class="meta">Задания 10–18: тексты, True/False/Not stated, тесты</div><div class="row" style="margin-top:10px"><button class="btn" id="rd">Читать</button></div></div><div class="card"><h2>Устная часть</h2><div class="meta">Чтение вслух с проверкой произношения и монолог с разбором от Claude</div><div class="row" style="margin-top:10px"><button class="btn" id="sp">Говорить</button></div></div>';
+h+='<div class="card"><h2>Работа над ошибками</h2><div class="meta">В списке: '+st.m.length+'</div><div class="row" style="margin-top:10px"><button class="btn" id="mis"'+(st.m.length?'':' disabled')+'>Повторить ошибки</button></div></div>';
+h+='<div class="card"><h2>Письменная часть</h2><div class="meta">Задания 39 и 40: счётчик слов, чек-лист, фразы</div><div class="row" style="margin-top:10px"><button class="btn" id="wr">Писать</button></div></div>';
+app.innerHTML=h;
+Array.prototype.forEach.call(app.querySelectorAll("[data-s]"),function(b){b.onclick=function(){begin(b.dataset.s)}});
+document.getElementById("mis").onclick=function(){R={q:sh(st.m.map(function(x){return x.slice()})).slice(0,10),i:0,r:0,mode:"m"};show()};
+document.getElementById("wr").onclick=function(){writing(0)};
+document.getElementById("rd").onclick=readList;document.getElementById("sp").onclick=speak;
+Array.prototype.forEach.call(app.querySelectorAll("[data-l]"),function(b){b.onclick=function(){level(+b.dataset.l)}});
+}
+function begin(k){var idx=sh(S[k].items.map(function(_,i){return i})).slice(0,10);R={q:idx.map(function(i){return[k,i]}),i:0,r:0,mode:k};show()}
+function hdr(t){return '<div class="top"><button class="btn ghost" id="back">← Темы</button><span class="meta">'+t+'</span></div>'}
+function show(){
+if(R.i>=R.q.length)return done();
+var k=R.q[R.i][0],ix=R.q[R.i][1],s=S[k],it=s.items[ix],h=hdr(s.name+' · '+(R.i+1)+' из '+R.q.length);
+h+='<div class="card"><div class="q">';
+if(s.kind==="t"){h+=esc(it[0]).replace("___",'<span class="gap"></span>')+'<span class="hint">'+it[1]+'</span></div><input type="text" id="in" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Ответ"><div class="row" style="margin-top:10px"><button class="btn" id="ck">Проверить</button></div>'}
+else{h+=esc(it[0]).replace("___",'<span class="gap"></span>')+'</div>'+it[1].map(function(o,j){return '<button class="opt" data-j="'+j+'">'+esc(o)+'</button>'}).join("")}
+h+='<div id="fb"></div></div>';app.innerHTML=h;
+document.getElementById("back").onclick=home;
+if(s.kind==="t"){var inp=document.getElementById("in");inp.focus();
+var go=function(){var v=norm(inp.value);if(!v)return;var ok=it[2].some(function(a){return norm(a)===v});finish(k,ix,ok,"Правильно: <b>"+esc(it[2].join(" / "))+"</b>. "+esc(it[3]));inp.disabled=true;document.getElementById("ck").disabled=true};
+document.getElementById("ck").onclick=go;inp.onkeydown=function(e){if(e.key==="Enter")go()}}
+else{Array.prototype.forEach.call(app.querySelectorAll(".opt"),function(b){b.onclick=function(){var j=+b.dataset.j,ok=j===it[2];
+Array.prototype.forEach.call(app.querySelectorAll(".opt"),function(x){x.disabled=true;if(+x.dataset.j===it[2])x.classList.add("ok")});
+if(!ok)b.classList.add("no");finish(k,ix,ok,esc(it[3]))}})}
+}
+function finish(k,ix,ok,msg){
+var d=st.d[k]||(st.d[k]={n:0,r:0});d.n++;if(ok){d.r++;R.r++}
+var key=k+":"+ix,pos=-1;st.m.forEach(function(x,i){if(x[0]===k&&x[1]===ix)pos=i});
+if(ok&&pos>-1)st.m.splice(pos,1);if(!ok&&pos<0)st.m.push([k,ix]);save();
+var f=document.getElementById("fb");f.innerHTML='<div class="fb'+(ok?'':' bad')+'"><b>'+(ok?'Верно!':'Пока неверно.')+'</b> '+msg+'</div><div class="row" style="margin-top:10px"><button class="btn" id="nx" autofocus>Дальше</button></div>';
+var nx=document.getElementById("nx");nx.focus();nx.onclick=function(){R.i++;show()}}
+function done(){
+var p=Math.round(R.r/R.q.length*100);st.b=st.b||{};if((st.b[R.mode]||0)<p){st.b[R.mode]=p;save()}
+app.innerHTML=hdr("Итог")+'<div class="card"><h2>'+R.r+' из '+R.q.length+' ('+p+'%)</h2><p>'+(p>=80?'Отличный результат. Можно переходить к следующему разделу.':p>=50?'Неплохо. Ошибки сохранены, вернись к ним позже.':'Это нормально на старте. Повтори ошибки и попробуй ещё раз.')+'</p><div class="row"><button class="btn" id="again">Ещё раз</button><button class="btn ghost" id="hm">К темам</button></div></div>';
+document.getElementById("back").onclick=home;document.getElementById("hm").onclick=home;
+document.getElementById("again").onclick=function(){R.mode==="m"?(st.m.length?home():home()):begin(R.mode)}}
+function writing(n){
+var w=W[n],h=hdr("Письменная часть")+'<div class="tabs">'+W.map(function(x,i){return '<button class="tab" data-n="'+i+'" aria-pressed="'+(i===n)+'">'+x.name+'</button>'}).join("")+'</div>';
+h+='<div class="card">'+w.prompt+'</div><textarea id="tx" placeholder="Пиши здесь по-английски…" aria-label="Текст"></textarea><div class="meta" style="margin:6px 0"><span id="cn" class="cnt">0</span> слов · нужно '+w.min+'–'+w.max+' (допустимо отклонение примерно на 10%)</div>';
+h+='<div class="row"><button class="btn" id="chk">Проверить с Claude</button></div><div id="co" class="meta" style="white-space:pre-wrap;margin:8px 0"></div><div class="card"><h2>Чек-лист</h2>'+w.check.map(function(c){return '<label><input type="checkbox"> '+c+'</label>'}).join("")+'</div><div class="card"><h2>Полезные фразы</h2><ul>'+w.phr.map(function(p){return '<li>'+p+'</li>'}).join("")+'</ul></div>';
+app.innerHTML=h;document.getElementById("back").onclick=home;
+Array.prototype.forEach.call(app.querySelectorAll(".tab"),function(b){b.onclick=function(){writing(+b.dataset.n)}});
+var tx=document.getElementById("tx"),cn=document.getElementById("cn");
+document.getElementById("chk").onclick=function(){fb(w.name+": "+w.prompt.replace(/<[^>]+>/g," "),tx.value,document.getElementById("co"))};
+tx.oninput=function(){var c=tx.value.trim().split(/\s+/).filter(Boolean).length;cn.textContent=c;cn.className="cnt "+(c>=w.min&&c<=w.max?"ok":(c>0?"no":""))}}
+home();
+</script>
+</body>
+</html>
