@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ЕГЭ English</title>
+<title>English: от нуля до ЕГЭ</title>
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="English"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="theme-color" content="#17205f">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#eef2f7;--card:#fff;--ink:#0f1b2d;--soft:#5d6b82;--acc:#2f5bea;--accink:#fff;--ok:#0f9d6e;--bad:#d63c44;--line:#d5dce8;
@@ -46,6 +47,52 @@ td,th{border:1px solid var(--line);padding:6px 8px;text-align:left}
 ul{margin:6px 0;padding-left:20px}
 label{display:block;margin:4px 0}
 .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+:root{--bg:#f3f4ff;--card:#fff;--ink:#1d1b4b;--soft:#6a6a96;--acc:#5b4bff;--accink:#fff;--ok:#10b981;--bad:#f43f5e;--line:#e3e3fa}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12112b;--card:#1d1c42;--ink:#f1f0ff;--soft:#a9a8d6;--acc:#8b80ff;--accink:#12112b;--ok:#34d399;--bad:#fb7185;--line:#34336a}}
+body{background:radial-gradient(900px 420px at 50% -180px,color-mix(in srgb,var(--acc) 22%,transparent),transparent),var(--bg)}
+.card{border-radius:20px;box-shadow:0 8px 24px -14px color-mix(in srgb,var(--acc) 55%,transparent)}
+.card.lock{opacity:.55}
+.btn{border-radius:14px;padding:12px 20px;box-shadow:0 4px 0 color-mix(in srgb,var(--acc) 55%,#000)}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 color-mix(in srgb,var(--acc) 55%,#000)}
+.btn.ghost{box-shadow:none;border-width:2px}
+.opt{border-radius:14px;border-width:2px;padding:14px 16px;font-weight:600}
+.opt:active{transform:scale(.98)}
+.hero{background:linear-gradient(135deg,var(--acc),#c026d3);color:#fff;border-radius:24px;padding:20px;margin-bottom:16px}
+.hero .hi{font-size:32px;font-weight:800;letter-spacing:-.02em}
+.hero .hs{opacity:.92;margin-bottom:12px}
+.chip{display:inline-block;background:rgba(255,255,255,.22);border-radius:999px;padding:4px 12px;margin:0 6px 6px 0;font-weight:800;font-size:14px}
+.hero .bar{background:rgba(255,255,255,.3);margin:4px 0 0}.hero .bar i{background:#fff}
+.bar{height:10px;border-radius:10px}
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#17205f,#b3213a)}
+.hero::before{content:"● ● ● ● ● ● ● ● ● ● ● ●";position:absolute;top:3px;left:0;right:0;text-align:center;letter-spacing:12px;font-size:10px;color:#ffd166}
+.hero::after{content:"🎄";position:absolute;right:14px;top:14px;font-size:52px}
+.snow{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:5}
+.snow i{position:absolute;top:-30px;color:#8fa8ff;opacity:.85;font-style:normal;text-shadow:0 0 5px rgba(143,168,255,.7);animation:fall linear infinite}
+@keyframes fall{to{transform:translateY(110vh) translateX(34px) rotate(200deg)}}
+@media (prefers-reduced-motion:reduce){.snow{display:none}}
+.fb{border:2px solid var(--ok);border-radius:16px;padding:14px 16px;background:color-mix(in srgb,var(--ok) 16%,var(--card))}
+.fb.bad{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 16%,var(--card))}
+.path{display:flex;flex-direction:column;align-items:center;gap:8px;padding:4px 0 8px;overflow-x:hidden}
+.lvh{width:100%;background:var(--acc);color:var(--accink);border-radius:16px;padding:12px 14px;margin:14px 0 8px;font-weight:800;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.lvh span{display:block;font-weight:600;font-size:13px;opacity:.9}
+.lvh .sm{padding:6px 12px;font-size:13px;box-shadow:none;background:rgba(255,255,255,.22);color:inherit;border:0}
+.pn{text-align:center;position:relative;width:150px}
+.node{width:78px;height:78px;border-radius:50%;border:0;font-size:32px;background:var(--acc);box-shadow:0 7px 0 color-mix(in srgb,var(--acc) 55%,#000);color:#fff}
+.node.done{background:#f5b301;box-shadow:0 7px 0 #b98700}
+.node.cur{background:var(--ok);box-shadow:0 7px 0 color-mix(in srgb,var(--ok) 55%,#000)}
+.node.lk{background:var(--line);box-shadow:0 7px 0 color-mix(in srgb,var(--line) 70%,#000)}
+.node:active:not(:disabled){transform:translateY(5px);box-shadow:0 2px 0 rgba(0,0,0,.3)}
+.nl{font-size:13px;font-weight:700;margin-top:12px;color:var(--soft)}
+.go{position:absolute;top:-24px;left:50%;transform:translateX(-50%);background:var(--card);border:2px solid var(--ok);color:var(--ok);font-weight:800;font-size:12px;padding:2px 10px;border-radius:10px}
+@media (prefers-reduced-motion:no-preference){.node.cur{animation:bob 1.6s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-6px)}}.pop{animation:pop .5s}@keyframes pop{0%{transform:scale(.6)}70%{transform:scale(1.15)}100%{transform:scale(1)}}}
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;background:var(--card);border-top:1px solid var(--line);padding:6px 4px calc(6px + env(safe-area-inset-bottom,0px))}
+.tabbar button{flex:1;background:none;border:0;padding:4px 2px;font-size:11px;font-weight:700;color:var(--soft);display:flex;flex-direction:column;align-items:center;gap:2px}
+.tabbar button span{font-size:22px}
+.tabbar button[aria-current="true"]{color:var(--acc)}
+.inner .tabbar{display:none}
+main{padding-bottom:96px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;text-align:center;font-size:12px;color:var(--soft)}.stats b{display:block;font-size:24px;color:var(--ink)}
+.badges{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;text-align:center;font-size:11px;font-weight:700}.bdg span{display:block;font-size:34px}.bdg.off{opacity:.3;filter:grayscale(1)}
 </style>
 </head>
 <body>
@@ -147,12 +194,40 @@ LV[2].les=[
 {t:"Present Perfect: опыт и результат",s:[["t","have / has + V3","Present Perfect = <b>have/has + третья форма глагола</b>. Говорим об опыте или результате. Слова-подсказки: ever, never, already, yet. Неправильные формы учим: eat → eaten, see → seen.",[["I have never eaten sushi.","Я никогда не ела суши."],["She has already finished.","Она уже закончила."],["Have you ever been to Paris?","Ты бывала в Париже?"]]],["q","I have never ___ sushi.",["eat","ate","eaten","eating"],2,"have + V3: eaten."],["t","for и since","<b>for</b> + период (for two years), <b>since</b> + точка во времени (since 2020).",[["I have lived here for five years.","Я живу здесь пять лет."],["She has studied since morning.","Она учится с утра."]]],["q","She has lived here ___ 2015.",["for","since","from","during"],1,"2015 — точка во времени → since."],["w",[["achieve","достигать"],["improve","улучшать"],["decide","решать"],["promise","обещать"]]]]},
 {t:"Сравнения: больше, самый",s:[["t","Степени сравнения","Короткие прилагательные: <b>-er</b> и <b>the -est</b> (tall → taller → the tallest). Длинные: <b>more</b> и <b>the most</b>. Сравниваем через <b>than</b>.",[["My bag is bigger than yours.","Моя сумка больше твоей."],["This is the most interesting book.","Это самая интересная книга."]]],["q","This book is ___ than that one.",["interesting","more interesting","most interesting","interestinger"],1,"Длинное прилагательное → more + than."],["q","He is the ___ student in class.",["tall","taller","tallest","most tall"],2,"the + -est."],["w",[["advice","совет"],["opinion","мнение"],["experience","опыт"],["ability","способность"]]]]},
 {t:"Если… то…",s:[["t","Условные предложения","<b>1-й тип</b> (реально): If + Present, <b>will</b> + глагол. <b>2-й тип</b> (нереально): If + Past, <b>would</b> + глагол. В 2-м типе после If используем <b>were</b>.",[["If it rains, we will stay at home.","Если пойдёт дождь, мы останемся дома."],["If I were you, I would call him.","На твоём месте я бы ему позвонила."]]],["q","If it rains tomorrow, we ___ at home.",["stay","will stay","would stay","stayed"],1,"1-й тип: will."],["q","If I ___ you, I would take the job.",["am","was","were","be"],2,"2-й тип: If I were you."],["w",[["successful","успешный"],["dangerous","опасный"],["polite","вежливый"],["expensive","дорогой"]]]]}];
+LV[0].les.push({t:"Цвета и числа",s:[["t","Цвета","Цвет ставим перед предметом: a red book, a blue bag.",[["a red apple","красное яблоко"],["a blue bag","синяя сумка"],["two black cats","две чёрные кошки"]]],["w",[["red","красный"],["blue","синий"],["green","зелёный"],["yellow","жёлтый"]]],["t","Числа 1–5","one, two, three, four, five. После числа больше одного добавляем -s: three books.",[["one cat","одна кошка"],["five apples","пять яблок"]]],["w",[["one","один"],["two","два"],["three","три"],["five","пять"]]],["q","Три книги — ___ books.",["three","tree","free","thee"],0,"three — три."]]});
+LV[1].les.push({t:"Мой день",s:[["t","Распорядок дня","Для распорядка дня используем Present Simple. Время говорим с <b>at</b>: at seven o’clock. Обрати внимание: have → <b>has</b> с he/she/it.",[["I get up at seven.","Я встаю в семь."],["She has lunch at two.","Она обедает в два."],["We do homework in the evening.","Мы делаем уроки вечером."]]],["w",[["get up","вставать"],["go to bed","ложиться спать"],["have lunch","обедать"],["do homework","делать уроки"]]],["q","I ___ up at seven.",["get","gets","getting","got"],0,"I get up."],["q","She ___ lunch at two.",["have","has","having","haves"],1,"she → has."]]});
+LV[2].les.push({t:"Вежливые фразы",s:[["t","Вежливые просьбы","<b>Could you…?</b> — вежливая просьба, <b>Would you like…?</b> — вежливое предложение, <b>Can I…?</b> — «можно мне…?».",[["Could you open the window, please?","Не могли бы вы открыть окно?"],["Would you like some tea?","Хотите чаю?"],["Can I sit here?","Можно сяду здесь?"]]],["q","___ you open the window, please?",["Could","Do","Are","Did"],0,"Could you…? — вежливая просьба."],["q","Вежливо предложить: «Хотите чаю?»",["Would you like some tea?","You want tea?","Do tea you want?","Tea you like?"],0,"Would you like …? — вежливое предложение."],["w",[["excuse me","извините"],["I’m sorry","мне жаль"],["of course","конечно"],["no problem","без проблем"]]]]});
+var BD=[0,1,2,4,8,16];
+LV[0].les.push({t:"Новый год",s:[["t","Поздравляем","В английском делают поздравления короткими фразами. Попробуй произнести их вслух.",[["Happy New Year!","С Новым годом!"],["Merry Christmas!","Весёлого Рождества!"],["I like snow.","Я люблю снег."]]],["w",[["snow","снег"],["gift","подарок"],["winter","зима"],["Christmas tree","ёлка"]]],["q","Happy ___ Year!",["New","Now","Nine","Next"],0,"New Year — Новый год."],["q","Как сказать «Я люблю снег»?",["I like snow.","I snow like.","Like I snow.","I am snow."],0,"I like + существитель."]]});
+LV[0].les.push({t:"Чьё это? my, your, his",s:[["t","Притяжательные слова","<b>my</b> — мой, <b>your</b> — твой, <b>his</b> — его, <b>her</b> — её, <b>our</b> — наш, <b>their</b> — их. Ставим перед существительным.",[["This is my bag.","Это моя сумка."],["Her name is Kate.","Её зовут Кейт."],["Their house is big.","Их дом большой."]]],["q","This is Anna. ___ brother is Max.",["Her","His","My","Their"],0,"Anna — женщина, поэтому her."],["q","I love ___ mother.",["me","my","I","mine"],1,"my mother — моя мама."],["w",[["my","мой"],["your","твой"],["his","его"],["her","её"]]]]});
+LV[1].les.push({t:"Предлоги: in, on, at, under",s:[["t","Где предмет?","<b>in</b> — внутри, <b>on</b> — на поверхности, <b>under</b> — под, <b>at</b> — в точке (at school, at home).",[["The book is on the table.","Книга на столе."],["The cat is under the bed.","Кошка под кроватью."],["She is at school.","Она в школе."]]],["q","The cat is ___ the box. (внутри)",["in","on","at","to"],0,"in — внутри."],["q","I am ___ home.",["in","on","at","to"],2,"at home — устойчивое выражение."],["w",[["table","стол"],["bed","кровать"],["window","окно"],["door","дверь"]]]]});
+LV[2].les.push({t:"Пассивный залог",s:[["t","Действие над предметом","Пассив: <b>be + третья форма</b>. Важно, что сделано, а не кто сделал. Время передаёт be: is/are, was/were, will be.",[["English is spoken in many countries.","По-английски говорят во многих странах."],["The bridge was built in 1890.","Мост построили в 1890."],["The letter will be sent tomorrow.","Письмо отправят завтра."]]],["q","The bridge ___ in 1890.",["built","was built","is built","builds"],1,"Past Simple Passive: was built."],["q","English ___ in many countries.",["speaks","is spoken","spoke","is speaking"],1,"Present Simple Passive: is spoken."],["w",[["build","строить"],["send","отправлять"],["invent","изобретать"],["discover","открывать"]]]]});
+function showTab(){Array.prototype.forEach.call(app.querySelectorAll(".tp"),function(e){e.hidden=e.dataset.t!==TAB});Array.prototype.forEach.call(document.querySelectorAll(".tabbar button"),function(b){b.setAttribute("aria-current",b.dataset.t===TAB)});var m=document.getElementById("snd");if(m)m.onclick=function(){st.mute=!st.mute;save();home()};var r=document.getElementById("rst");if(r)r.onclick=function(){if(confirm("Удалить весь прогресс?")){st={d:{},m:[]};save();TAB="learn";home()}}}
+function meBlock(){var d=st.d||{},n=0,r=0;["g","w","m","r"].forEach(function(k){if(d[k]){n+=d[k].n;r+=d[k].r}});
+var les=Object.keys(st.l||{}).length,words=Object.keys(st.k||{}).length,s=st.s||{n:0},xp=st.x||0,full=Object.keys(st.l||{}).some(function(k){return st.l[k]===3});
+var bd=[["🌟","Первый урок",les>=1],["🔥","3 дня подряд",s.n>=3],["📅","Неделя подряд",s.n>=7],["📚","10 слов",words>=10],["🧠","40 слов",words>=40],["⭐","Урок без ошибок",full],["🎓","20 ответов ЕГЭ",n>=20],["🏆","300 XP",xp>=300]];
+return '<div class="tp" data-t="me"><div class="card"><h2>Моя статистика</h2><div class="stats"><div><b>'+xp+'</b>XP</div><div><b>'+s.n+'</b>дней подряд</div><div><b>'+les+'</b>уроков</div><div><b>'+words+'</b>слов в колоде</div><div><b>'+(n?Math.round(r/n*100):0)+'%</b>верных в тестах</div></div></div><div class="card"><h2>Награды</h2><div class="badges">'+bd.map(function(b){return '<div class="bdg'+(b[2]?'':' off')+'"><span>'+b[0]+'</span>'+b[1]+'</div>'}).join("")+'</div></div><div class="card"><h2>Настройки</h2><div class="row"><button class="btn ghost" id="snd">Звук: '+(st.mute?'выкл':'вкл')+'</button><button class="btn ghost" id="rst">Сбросить прогресс</button></div><p class="meta">Чтобы приложение открывалось как обычное: в Safari «Поделиться» → «На экран «Домой»».</p></div></div>'}
+var AC=null;function tone(f,d,t){try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();var o=AC.createOscillator(),g=AC.createGain();o.type=t||"sine";o.frequency.value=f;g.gain.value=.07;o.connect(g);g.connect(AC.destination);o.start();o.stop(AC.currentTime+d)}catch(e){}}
+function snd(ok){if(st.mute)return;if(ok){tone(660,.12);setTimeout(function(){tone(880,.18)},110)}else tone(180,.3,"square")}
+function pathNodes(){var a=[];LV.forEach(function(L,i){L.les.forEach(function(l,j){a.push([i,j])})});return a}
+function bump(x){var t=new Date().toISOString().slice(0,10),s=st.s||(st.s={d:"",n:0});st.x=(st.x||0)+x;var g=st.g&&st.g.d===t?st.g:(st.g={d:t,x:0});g.x+=x;if(s.d!==t){var y=new Date(Date.now()-864e5).toISOString().slice(0,10);s.n=s.d===y?s.n+1:1;s.d=t}save()}
+function addWords(i,j){st.k=st.k||{};LV[i].les[j].s.forEach(function(s){if(s[0]==="w")s[1].forEach(function(p){if(!st.k[p[0]])st.k[p[0]]={ru:p[1],b:0,d:0}})})}
+function due(){var n=Date.now();return Object.keys(st.k||{}).filter(function(w){return st.k[w].d<=n})}
+function grade(w,ok){var k=st.k&&st.k[w];if(!k)return;k.b=ok?Math.min(k.b+1,5):1;k.d=Date.now()+(ok?BD[k.b]*864e5:6e5);save()}
+function review(){
+var ds=sh(due()).slice(0,8),pool=Object.keys(st.k||{});
+if(!ds.length){app.innerHTML=hdr("Повторение")+'<div class="card"><h2>Пока повторять нечего</h2><p>Проходи уроки: новые слова попадут сюда, и приложение напомнит о них в нужный момент.</p></div>';document.getElementById("back").onclick=home;return}
+var q=ds.map(function(w){var k=st.k[w],ot=sh(pool.filter(function(x){return x!==w})).slice(0,3),o;
+if(Math.random()<.5){o=sh(ot.map(function(x){return st.k[x].ru}).concat([k.ru]));return["q","Что значит «"+w+"»?",o,o.indexOf(k.ru),w+" — "+k.ru+".",w]}
+o=sh(ot.concat([w]));return["q","Как по-английски: «"+k.ru+"»?",o,o.indexOf(w),k.ru+" — "+w+".",w]});
+LS={i:-1,j:0,q:q,p:0,err:0};step()}
+function rend(){bump(LS.q.length*2);app.innerHTML=hdr("Повторение")+'<div class="card" style="text-align:center"><h2>Готово! 🎉</h2><p>Ошибок: '+LS.err+'. Слова с ошибками вернутся скоро, остальные — через несколько дней.</p><div class="row" style="justify-content:center"><button class="btn" id="hm">На главную</button></div></div>';document.getElementById("back").onclick=home;document.getElementById("hm").onclick=home}
 var LS=null;
 function expand(i,steps){return steps.reduce(function(a,s){if(s[0]!=="w")return a.concat([s]);var pool=LV[i].words;a.push(["t","Новые слова","Прочитай, послушай (🔊) и запомни. Потом проверим.",s[1]]);s[1].forEach(function(p){var o=sh(pool.filter(function(x){return x[0]!==p[0]})).slice(0,3).map(function(x){return x[0]}),op=sh(o.concat([p[0]]));a.push(["q","Как по-английски: «"+p[1]+"»?",op,op.indexOf(p[0]),p[1]+" — "+p[0]+"."])});return a},[])}
 function lesson(i,j){LS={i:i,j:j,q:expand(i,LV[i].les[j].s),p:0,err:0};step()}
 function step(){
 var s=LS.q[LS.p];if(!s)return lend();
-var l=LV[LS.i].les[LS.j],h=hdr(l.t)+'<div class="bar"><i style="width:'+Math.round(LS.p/LS.q.length*100)+'%"></i></div><div class="card">';
+var h=hdr(LS.i<0?"Повторение":LV[LS.i].les[LS.j].t)+'<div class="bar"><i style="width:'+Math.round(LS.p/LS.q.length*100)+'%"></i></div><div class="card">';
 if(s[0]==="t"){
 h+='<h2>'+s[1]+'</h2><p>'+s[2]+'</p>'+s[3].map(function(e,k){return '<div class="row" style="margin:8px 0"><button class="btn ghost" data-k="'+k+'" aria-label="Слушать">🔊</button><div><b>'+esc(e[0])+'</b><div class="meta">'+esc(e[1])+'</div></div></div>'}).join("")+'<div class="row" style="margin-top:12px"><button class="btn" id="go">Понятно, дальше</button></div></div>';
 app.innerHTML=h;
@@ -162,19 +237,19 @@ document.getElementById("go").onclick=function(){LS.p++;step()};
 h+='<div class="q">'+esc(s[1]).replace("___",'<span class="gap"></span>')+'</div>'+s[2].map(function(o,m){return '<button class="opt" data-m="'+m+'">'+esc(o)+'</button>'}).join("")+'<div id="fb"></div></div>';
 app.innerHTML=h;
 Array.prototype.forEach.call(app.querySelectorAll(".opt"),function(b){b.onclick=function(){
-var ok=+b.dataset.m===s[3];
+var ok=+b.dataset.m===s[3];if(s[5]&&!s.r)grade(s[5],ok);snd(ok);
 Array.prototype.forEach.call(app.querySelectorAll(".opt"),function(x){x.disabled=true;if(+x.dataset.m===s[3])x.classList.add("ok")});
 if(!ok){b.classList.add("no");LS.err++;if(!s.r){var c=s.slice();c.r=1;LS.q.push(c)}}
 document.getElementById("fb").innerHTML='<div class="fb'+(ok?'':' bad')+'"><b>'+(ok?'Верно!':'Не совсем.')+'</b> '+esc(s[4])+'</div><div class="row" style="margin-top:10px"><button class="btn" id="go">Дальше</button></div>';
 var g=document.getElementById("go");g.focus();g.onclick=function(){LS.p++;step()}}});
 }
-document.getElementById("back").onclick=function(){level(LS.i)}}
-function lend(){
-var k=LS.i+"."+LS.j,n=LV[LS.i].les.length,stars=LS.err===0?3:LS.err<3?2:1;st.l=st.l||{};if((st.l[k]||0)<stars){st.l[k]=stars;save()}
+document.getElementById("back").onclick=function(){LS.i<0?home():level(LS.i)}}
+function lend(){if(LS.i<0)return rend();
+var k=LS.i+"."+LS.j,n=LV[LS.i].les.length,stars=LS.err===0?3:LS.err<3?2:1;st.l=st.l||{};addWords(LS.i,LS.j);bump(10+stars*5);if((st.l[k]||0)<stars){st.l[k]=stars;save()}
 var more=LS.j+1<n;
-app.innerHTML=hdr("Урок пройден")+'<div class="card" style="text-align:center"><h2 style="font-size:30px">'+"⭐".repeat(stars)+'</h2><p>'+(LS.err?'Ошибок: '+LS.err+'. Они повторились в конце урока. Пройди урок ещё раз, чтобы получить 3 звезды.':'Без ошибок! Отлично.')+'</p><div class="row" style="justify-content:center"><button class="btn" id="nx">'+(more?'Следующий урок':'К уровню')+'</button><button class="btn ghost" id="lv">К уровню</button></div></div>';
+app.innerHTML=hdr("Урок пройден")+'<div class="card" style="text-align:center"><div class="pop" style="font-size:60px">🎁</div><h2 style="font-size:30px">'+"⭐".repeat(stars)+'</h2><p>'+(LS.err?'Ошибок: '+LS.err+'. Они повторились в конце урока. Пройди урок ещё раз, чтобы получить 3 звезды.':'Без ошибок! Отлично.')+'</p><div class="row" style="justify-content:center"><button class="btn" id="nx">'+(more?'Следующий урок':'К уровню')+'</button><button class="btn ghost" id="lv">К уровню</button></div></div>';
 document.getElementById("back").onclick=home;
-document.getElementById("nx").onclick=function(){more?lesson(LS.i,LS.j+1):level(LS.i)};
+document.getElementById("nx").onclick=function(){more?lesson(LS.i,LS.j+1):home()};
 document.getElementById("lv").onclick=function(){level(LS.i)}}
 function lvOpen(i){return i===0||LV[i-1].les.every(function(l,j){return((st.l||{})[(i-1)+"."+j]||0)>0})}
 function lvOpenOld(i){var b=st.b||{};return i===0||(( b["a"+(i-1)]||0)>=70&&(b["v"+(i-1)]||0)>=70)}
@@ -289,23 +364,30 @@ function sh(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.r
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 function norm(s){return s.toLowerCase().replace(/[’‘]/g,"'").replace(/\s+/g," ").trim()}
 function home(){
-R=null;var h='<h1>English: от нуля до ЕГЭ</h1><p class="sub">Это обучалка: в каждом уроке сначала объяснение с примерами, потом упражнения. Ошибки повторяются в конце урока. Финальный уровень — подготовка к ЕГЭ.</p>';
-LV.forEach(function(L,i){var o=lvOpen(i);h+='<div class="card"><h2>'+L.n+'</h2><div class="meta">'+L.t+'</div><div class="row" style="margin-top:10px"><button class="btn" data-l="'+i+'"'+(o?'':' disabled')+'>'+(o?'Открыть':'Сначала пройди предыдущий уровень')+'</button></div></div>'});
-h+='<h2 style="margin-top:20px">Уровень 4 · Подготовка к ЕГЭ</h2>';
+document.body.classList.remove("inner");R=null;var xp=st.x||0,sn=(st.s||{}).n||0,ny=Math.ceil((new Date(new Date().getFullYear()+1,0,1)-Date.now())/864e5),gx=(st.g&&st.g.d===new Date().toISOString().slice(0,10))?st.g.x:0,h='<div class="hero"><div class="hi">English 👋</div><div class="hs">От нуля до ЕГЭ, шаг за шагом</div><div class="chips"><span class="chip">🔥 '+sn+' дн.</span><span class="chip">⭐ '+xp+' XP</span><span class="chip">Уровень '+(Math.floor(xp/100)+1)+'</span><span class="chip">🎄 до Нового года: '+ny+' дн.</span></div><div class="hs" style="margin:6px 0 4px">Цель дня: '+gx+' / 30 XP'+(gx>=30?' ✅':'')+'</div><div class="bar"><i style="width:'+Math.min(100,gx/30*100)+'%"></i></div></div><p class="sub">Это обучалка: в каждом уроке сначала объяснение с примерами, потом упражнения. Ошибки повторяются в конце урока. Финальный уровень — подготовка к ЕГЭ.</p>';
+var nd=due().length;h+='<div class="tp" data-t="learn">';h+='<div class="card"><h2>🔁 Повторение</h2><div class="meta">'+(nd?'Ждут повторения: '+nd+' слов. Повторять в нужный момент — самый точный способ запомнить.':'Новые слова из уроков попадут сюда, и приложение напомнит о них вовремя.')+'</div><div class="row" style="margin-top:10px"><button class="btn" id="rv">Повторить</button></div></div>';
+[].forEach(function(L,i){var o=lvOpen(i),dn=L.les.filter(function(l,j){return(st.l||{})[i+"."+j]}).length;h+='<div class="card'+(o?'':' lock')+'"><h2>'+(o?'':'🔒 ')+L.n+'</h2><div class="meta">'+L.t+' · '+dn+' из '+L.les.length+' уроков</div><div class="bar"><i style="width:'+Math.round(dn/L.les.length*100)+'%"></i></div><div class="row" style="margin-top:10px"><button class="btn" data-l="'+i+'"'+(o?'':' disabled')+'>'+(o?'Открыть':'Сначала пройди предыдущий уровень')+'</button></div></div>'});
+h+='<div class="path">';
+pathNodes().forEach(function(n,idx,arr){var i=n[0],j=n[1],s=(st.l||{})[i+"."+j]||0,pv=idx===0||((st.l||{})[arr[idx-1][0]+"."+arr[idx-1][1]]||0)>0,cu=pv&&!s;
+if(j===0)h+='<div class="lvh"><div>'+LV[i].n+'<span>'+LV[i].t+'</span></div><button class="btn sm" data-l="'+i+'">Тесты и слова</button></div>';
+var off=[0,46,70,46,0,-46,-70,-46][idx%8];
+h+='<div class="pn" style="transform:translateX('+off+'px)">'+(cu?'<div class="go">СТАРТ</div>':'')+'<button class="node'+(s?' done':cu?' cur':pv?'':' lk')+'" data-n="'+i+'.'+j+'"'+(pv?'':' disabled')+' aria-label="'+esc(LV[i].les[j].t)+'">'+(s?'⭐':pv?'🎄':'🔒')+'</button><div class="nl">'+esc(LV[i].les[j].t)+'</div></div>'});
+h+='</div></div><div class="tp" data-t="ege"><h2 style="margin-top:20px">Уровень 4 · Подготовка к ЕГЭ</h2>';
 ["g","w","m"].forEach(function(k){var s=S[k],d=st.d[k]||{n:0,r:0},p=d.n?Math.round(d.r/d.n*100):0;
 h+='<div class="card"><h2>'+s.name+'</h2><div class="meta">'+s.task+' · '+s.items.length+' заданий в банке</div><div class="bar"><i style="width:'+p+'%"></i></div><div class="row"><span class="meta">'+(d.n?'Верно '+d.r+' из '+d.n+' ('+p+'%)':'Ещё не начато')+'</span><span style="flex:1"></span><button class="btn" data-s="'+k+'">Тренировать 10</button></div></div>'});
 h+='<div class="card"><h2>Чтение</h2><div class="meta">Задания 10–18: тексты, True/False/Not stated, тесты</div><div class="row" style="margin-top:10px"><button class="btn" id="rd">Читать</button></div></div><div class="card"><h2>Устная часть</h2><div class="meta">Чтение вслух с проверкой произношения и монолог с разбором от Claude</div><div class="row" style="margin-top:10px"><button class="btn" id="sp">Говорить</button></div></div>';
 h+='<div class="card"><h2>Работа над ошибками</h2><div class="meta">В списке: '+st.m.length+'</div><div class="row" style="margin-top:10px"><button class="btn" id="mis"'+(st.m.length?'':' disabled')+'>Повторить ошибки</button></div></div>';
 h+='<div class="card"><h2>Письменная часть</h2><div class="meta">Задания 39 и 40: счётчик слов, чек-лист, фразы</div><div class="row" style="margin-top:10px"><button class="btn" id="wr">Писать</button></div></div>';
-app.innerHTML=h;
+h+='</div>'+meBlock();app.innerHTML=h;showTab();
 Array.prototype.forEach.call(app.querySelectorAll("[data-s]"),function(b){b.onclick=function(){begin(b.dataset.s)}});
 document.getElementById("mis").onclick=function(){R={q:sh(st.m.map(function(x){return x.slice()})).slice(0,10),i:0,r:0,mode:"m"};show()};
 document.getElementById("wr").onclick=function(){writing(0)};
 document.getElementById("rd").onclick=readList;document.getElementById("sp").onclick=speak;
-Array.prototype.forEach.call(app.querySelectorAll("[data-l]"),function(b){b.onclick=function(){level(+b.dataset.l)}});
+Array.prototype.forEach.call(app.querySelectorAll("[data-l]"),function(b){b.onclick=function(){level(+b.dataset.l)}});document.getElementById("rv").onclick=review;
+Array.prototype.forEach.call(app.querySelectorAll("[data-n]"),function(b){b.onclick=function(){var p=b.dataset.n.split(".");lesson(+p[0],+p[1])}});
 }
 function begin(k){var idx=sh(S[k].items.map(function(_,i){return i})).slice(0,10);R={q:idx.map(function(i){return[k,i]}),i:0,r:0,mode:k};show()}
-function hdr(t){return '<div class="top"><button class="btn ghost" id="back">← Темы</button><span class="meta">'+t+'</span></div>'}
+function hdr(t){document.body.classList.add("inner");return '<div class="top"><button class="btn ghost" id="back">← Темы</button><span class="meta">'+t+'</span></div>'}
 function show(){
 if(R.i>=R.q.length)return done();
 var k=R.q[R.i][0],ix=R.q[R.i][1],s=S[k],it=s.items[ix],h=hdr(s.name+' · '+(R.i+1)+' из '+R.q.length);
@@ -322,7 +404,7 @@ Array.prototype.forEach.call(app.querySelectorAll(".opt"),function(x){x.disabled
 if(!ok)b.classList.add("no");finish(k,ix,ok,esc(it[3]))}})}
 }
 function finish(k,ix,ok,msg){
-var d=st.d[k]||(st.d[k]={n:0,r:0});d.n++;if(ok){d.r++;R.r++}
+var d=st.d[k]||(st.d[k]={n:0,r:0});d.n++;if(ok){d.r++;R.r++}bump(ok?2:0);
 var key=k+":"+ix,pos=-1;st.m.forEach(function(x,i){if(x[0]===k&&x[1]===ix)pos=i});
 if(ok&&pos>-1)st.m.splice(pos,1);if(!ok&&pos<0)st.m.push([k,ix]);save();
 var f=document.getElementById("fb");f.innerHTML='<div class="fb'+(ok?'':' bad')+'"><b>'+(ok?'Верно!':'Пока неверно.')+'</b> '+msg+'</div><div class="row" style="margin-top:10px"><button class="btn" id="nx" autofocus>Дальше</button></div>';
@@ -341,6 +423,10 @@ Array.prototype.forEach.call(app.querySelectorAll(".tab"),function(b){b.onclick=
 var tx=document.getElementById("tx"),cn=document.getElementById("cn");
 document.getElementById("chk").onclick=function(){fb(w.name+": "+w.prompt.replace(/<[^>]+>/g," "),tx.value,document.getElementById("co"))};
 tx.oninput=function(){var c=tx.value.trim().split(/\s+/).filter(Boolean).length;cn.textContent=c;cn.className="cnt "+(c>=w.min&&c<=w.max?"ok":(c>0?"no":""))}}
+var TAB="learn";
+(function(){var b=document.createElement("nav");b.className="tabbar";b.innerHTML=[["learn","🏠","Учиться"],["rev","🔁","Повторение"],["ege","🎓","ЕГЭ"],["me","👤","Профиль"]].map(function(t){return '<button data-t="'+t[0]+'"><span>'+t[1]+'</span>'+t[2]+'</button>'}).join("");document.body.appendChild(b);Array.prototype.forEach.call(b.querySelectorAll("button"),function(x){x.onclick=function(){if(x.dataset.t==="rev"){review();return}TAB=x.dataset.t;home();window.scrollTo(0,0)}})})();
+(function(){try{var c=document.createElement("canvas");c.width=c.height=180;var x=c.getContext("2d"),g=x.createLinearGradient(0,0,180,180);g.addColorStop(0,"#17205f");g.addColorStop(1,"#b3213a");x.fillStyle=g;x.fillRect(0,0,180,180);x.font="96px serif";x.textAlign="center";x.textBaseline="middle";x.fillText("🎄",90,98);var l=document.createElement("link");l.rel="apple-touch-icon";l.href=c.toDataURL("image/png");document.head.appendChild(l)}catch(e){}})();
+(function(){var f=document.createElement("div");f.className="snow";f.setAttribute("aria-hidden","true");for(var i=0;i<22;i++){var s=document.createElement("i");s.textContent=i%3?"❄":"✦";s.style.cssText="left:"+Math.random()*100+"%;animation-duration:"+(8+Math.random()*10)+"s;animation-delay:-"+Math.random()*12+"s;font-size:"+(10+Math.random()*14)+"px";f.appendChild(s)}document.body.appendChild(f)})();
 home();
 </script>
 </body>
